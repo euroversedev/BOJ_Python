@@ -1,6 +1,5 @@
-from collections import deque
-
-q = deque([1])
-a = q.popleft()
-b = q.popleft()
-print(a, b)
+array = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+word = 'c='
+print(array[0])
+if word[0:len(word)] == array[0]:
+    print('a')
