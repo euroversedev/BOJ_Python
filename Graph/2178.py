@@ -19,9 +19,10 @@ def bfs(x, y, dist):
         
         for dx, dy in [(+1, 0), (-1, 0), (0, +1), (0, -1)]:
             if 0<=i+dx<N and 0<=j+dy<M:
-                if (visited[i+dx][j+dy] == False) and array[i+dx][j+dy] == 1:
+                if (visited[i+dx][j+dy] == False) and (array[i+dx][j+dy] == 1):
                     q.append((i+dx, j+dy, dist+1))
-                    visited[i+dx][j+dy] == True
+                    visited[i+dx][j+dy] = True
+
 
 result = bfs(0, 0, 1)
 print(result)
