@@ -1,5 +1,2 @@
-array = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
-word = 'c='
-print(array[0])
-if word[0:len(word)] == array[0]:
-    print('a')
+array = [1, 2, 3, 4, 5]
+print(sum(array[1:1]))
