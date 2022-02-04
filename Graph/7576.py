@@ -1,35 +1,43 @@
 import sys
 from collections import deque
 
-M, N = map(int, input().split())
-array = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
+M, N, H = map(int, input().split())
+array = [[list(map(int, sys.stdin.readline().split())) for _ in range(N)] for _ in range(H)]
 
 def bfs():
     q = deque()
     
-    for i in range(N):
-        for j in range(M):
-            if array[i][j] == 1:
-                q.append((i,j))
+    for h in range(H):
+        for i in range(N):
+            for j in range(M):
+                if array[h][i][j] == 1:
+                    q.append((h, i, j))
     
     while q:
-        y, x = q.popleft()
+        h, y, x = q.popleft()
         
-        for dy, dx in [(1,0),(-1,0),(0,1),(0,-1)]:
-            if 0<=y+dy<N and 0<=x+dx<M:
-                if array[y+dy][x+dx] == 0:
-                    q.append((y+dy, x+dx))
-                    array[y+dy][x+dx] = array[y][x] + 1
+        for dh, dy, dx in [(1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)]:
+            if 0<=h+dh<H and 0<=y+dy<N and 0<=x+dx<M:
+                if array[h+dh][y+dy][x+dx] == 0:
+                    q.append((h+dh, y+dy, x+dx))
+                    array[h+dh][y+dy][x+dx] = array[h][y][x] + 1
 
 bfs()
-MAX = max(map(max, array))
+MAX = 0
+flag = True
+for h in range(H):
+    for i in range(N):
+        for j in range(M):
+            if MAX < array[h][i][j]: MAX = array[h][i][j]
+            if array[h][i][j] == 0: flag = False
 
-if any(0 in arr for arr in array):
+if flag == False:
     print("-1")
 elif MAX == 1:
     print("0")
 else:
-    print(MAX - 1)
+    print(MAX-1)
+
 
 ''' [review]
 2차원 리스트 최대값 구하기
