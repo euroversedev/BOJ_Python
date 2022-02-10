@@ -1,1 +1,1 @@
-## BeakJoon Online Judge Problem Solve with Python
+## BeakJoon Online Judge Problem Solving with Python
