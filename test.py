@@ -1,1 +1,1 @@
-print(ord('Z')-ord('A'))
+print(int(1.4), int(round(1.6, 0)))
