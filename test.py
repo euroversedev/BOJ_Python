@@ -1,1 +1,1 @@
-print(int(1.4), int(round(1.6, 0)))
+print(round(3//2))
