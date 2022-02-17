@@ -1,9 +1,10 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        
-        
-tree = dict()
+N = int(input())
+dp = [1] * (N+1)
+for i in range(2, N+1):
+    dp[i] = (dp[i-1]*i)%15746
 
-tree['a'] = Node(1)
-print(tree['a'].data)
+sum_ = 0
+for i in range((N//2)+1):
+    k = N-2*i
+    sum_ += dp[i+k]//dp[i]//dp[k]
+print(sum_%15746)
