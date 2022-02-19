@@ -1,10 +1,2 @@
-N = int(input())
-dp = [1] * (N+1)
-for i in range(2, N+1):
-    dp[i] = (dp[i-1]*i)%15746
-
-sum_ = 0
-for i in range((N//2)+1):
-    k = N-2*i
-    sum_ += dp[i+k]//dp[i]//dp[k]
-print(sum_%15746)
+array = [[1,2,3],[4,5,6],[7,8,9]]
+print(list(zip(*array))[0])
