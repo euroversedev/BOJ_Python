@@ -1,13 +1,8 @@
-def solution(brown, yellow):
-    answer = [0, 0]
-    start = int(yellow**0.5)
-    # i는 노란색의 가로 길이
-    for i in range(start, yellow+1):
-        if yellow % i == 0 and (yellow//i) <= i:
-            j = yellow // i
-            if 2*i + 2*(j+2) == brown:
-                answer = [i+2, j+2]
-            
-    return answer
+import heapq
 
-print(solution(3, 3))
+h = [(1,1),(2,2),(1,3),(1,2),(2,1)]
+heapq.heapify(h)
+print(h)
+
+while h:
+    print(heapq.heappop(h))
