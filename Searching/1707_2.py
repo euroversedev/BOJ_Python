@@ -31,11 +31,11 @@ for _ in range(T):
         graph[u].append(v)
         graph[v].append(u)
     
-    MAX = 0
+    result = 0
     for i in range(1, V+1):
-        print(group)
+
         if group[i] == None:
-            result = max(MAX, bfs(graph, group, i))
+            result = max(result, bfs(graph, group, i))
     
     if result == 1:
         print("NO")
