@@ -1,6 +1,15 @@
-import heapq
-h = [(1,2),(3,4),(3,3),(3,5),(4,7),(4,5),(4,1), (5,6),(5,4),(5,3)]
-heapq.heapify(h)
+S = int(input())
 
-while h:
-    print(heapq.heappop(h))
+i = 0
+sum_ = 0
+while True:
+    sum_ += i
+    if sum_ > S:
+        break
+    
+    i += 1
+    
+print(i-1)
+
+
+print(sum(range(1,100000)))

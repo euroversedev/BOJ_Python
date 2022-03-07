@@ -1,5 +1,4 @@
 import sys
-
 N, M = map(int, input().split())
 array = [int(sys.stdin.readline().strip()) for _ in range(M)]
 
