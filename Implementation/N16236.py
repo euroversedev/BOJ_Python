@@ -1,3 +1,10 @@
+'''
+16236번 
+간선을 직접 생성하는 방법으로는 구현했는데, 시간복잡도가 높음.
+때문에 BFS에 조건문을 추가해서 하는 방법으로 바꿀려니까
+While문의 탈출 조건을 못 정하겠음..
+'''
+
 import sys
 from collections import deque
 
