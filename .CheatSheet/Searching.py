@@ -35,3 +35,37 @@ BFS 면적 구하기 == Popleft 몇번 하는지 세기
 속도, 메모리 측면에서 dfs보다는 bfs가 우세하다. bfs 사용할 수 있으면 쓰자.
 dfs는 백트래킹에나 잘 써먹자구.
 '''
+
+
+'''12852. 1로 만들기(2)에 관하여..
+풀이법이 다양하다.
+1. DP
+2. dfs + dp
+3. bfs 등
+
+이 때, 문제 조건을 만족하는 수열을 만들기 위해 나는 역추적을 사용했다.
+하지만, 아래와 같이 수열을 저장하면서 하는 코드가 있다.
+=> 하나의 수열만 얻을 수 있는 역추적과 달리,
+조건을 만족하는 "모든" 수열을 찾을 수 있다.
+
+잊지말자, "최단경로"는 BFS.
+'''
+from collections import deque
+
+n = int(input())
+visited = [0] * (n+1)
+
+q = deque([(n, [n])])
+while q:
+    num, answer_arr = q.popleft()
+    if num == 1:
+        print(len(answer_arr)-1)
+        print(*answer_arr)
+        break
+    if not visited[num]:
+        visited[num] = 1
+        if num % 3 == 0:
+            q.append((num//3, answer_arr+[num//3]))
+        if num % 2 == 0:
+            q.append((num//2, answer_arr+[num//2]))
+        q.append((num-1, answer_arr+[num-1]))
