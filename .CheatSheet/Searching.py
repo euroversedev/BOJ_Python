@@ -69,3 +69,9 @@ while q:
         if num % 2 == 0:
             q.append((num//2, answer_arr+[num//2]))
         q.append((num-1, answer_arr+[num-1]))
+        
+        
+'''
+Binary Search Tip. https://www.acmicpc.net/board/view/58166
+투 포인터로 해결되는 문제 중에는 이분 탐색으로 해결되는 것이 많다. ex. 1806
+'''

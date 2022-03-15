@@ -1,13 +1,3 @@
-수열 나오면 생각해볼 수 있는것들
-=> DP, 그리디, 투포인터 등 (ex2285)
-
-
-        
-'''
-Binary Search Tip. https://www.acmicpc.net/board/view/58166
-투 포인터로 해결되는 문제 중에는 이분 탐색으로 해결되는 것이 많다. ex. 1806
-'''
-# 1806 부분합 코드
 import sys
 
 N, S = map(int, sys.stdin.readline().strip().split())
@@ -29,5 +19,5 @@ for start in range(N):
 print(answer if answer != 10**9 else 0)
 
 '''
-★★★시작과 끝, 합은 모두 0에서 시작한다.
+시작과 끝, 합은 모두 0에서 시작한다.
 '''
